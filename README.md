@@ -16,30 +16,28 @@ Example: `5x11E_performance.dat` + `5x11E_geometry.dat`
 ## Usage (MATLAB command window)
 
 ```matlab
-cd('/Users/jacobhome/Documents/Airspeed/APC_Propeller_Tools')
-
 % Prompt for folder + selection
 analyze_apc_prop
 
 % Folder with one prop -> runs automatically
-analyze_apc_prop('/path/to/raw_prop_data')
+analyze_apc_prop('/path/to/prop_data')
 
 % Folder with multiple props -> lists them and asks you to choose
-analyze_apc_prop('/path/to/raw_prop_data')
+analyze_apc_prop('/path/to/prop_data')
 
 % Analyze specific props
-analyze_apc_prop('/path/to/raw_prop_data', '5x11E')
-analyze_apc_prop('/path/to/raw_prop_data', '5x11E,7x11E')
-analyze_apc_prop('/path/to/raw_prop_data', {'5x11E','7x15E'})
+analyze_apc_prop('/path/to/prop_data', '5x11E')
+analyze_apc_prop('/path/to/prop_data', '5x11E,7x11E')
+analyze_apc_prop('/path/to/prop_data', {'5x11E','7x15E'})
 
 % Analyze every prop in the folder
-analyze_apc_prop('/path/to/raw_prop_data', 'all')
+analyze_apc_prop('/path/to/prop_data', 'all')
 ```
 
 Each run writes:
 
 ```text
-<dataFolder>/<name>_fit.json
+<dataFolder>/<name>_analysed.json
 ```
 
 ## Fit model

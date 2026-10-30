@@ -24,7 +24,7 @@ function outFiles = analyze_apc_prop(dataFolder, propSpec)
 %   <name>_geometry.dat
 %
 % Output:
-%   <dataFolder>/<name>_fit.json
+%   <dataFolder>/<name>_analysed.json
 
     if nargin < 1 || isempty(dataFolder)
         dataFolder = input('Path to folder with APC .dat files: ', 's');
@@ -60,7 +60,7 @@ function outFiles = analyze_apc_prop(dataFolder, propSpec)
         propName = propsToRun{k};
         fprintf('\n---- %s ----\n', propName);
         result = analyzeOneProp(dataFolder, propName, degreeJ, degreeRe, ReScale);
-        outPath = fullfile(dataFolder, [propName '_fit.json']);
+        outPath = fullfile(dataFolder, [propName '_analysed.json']);
         writeJson(outPath, result);
         outFiles{k} = outPath;
         fprintf('Wrote %s\n', outPath);
